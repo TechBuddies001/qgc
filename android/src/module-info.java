@@ -1,0 +1,3 @@
+module android {
+    requires android;
+}

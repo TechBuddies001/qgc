@@ -61,12 +61,12 @@ import android.os.Bundle;
 import android.bluetooth.BluetoothDevice;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
-
 import com.hoho.android.usbserial.driver.*;
 import org.qtproject.qt5.android.bindings.QtActivity;
+import org.mavlink.qgroundcontrol.UdpAqiHttpServer;
 import org.qtproject.qt5.android.bindings.QtApplication;
 
-public class QGCActivity extends QtActivity
+public class QGCActivity extends QtActivity implements DataInterface
 {
     public  static int                                  BAD_DEVICE_ID = 0;
     private static QGCActivity                          _instance = null;
@@ -262,6 +262,9 @@ public class QGCActivity extends QtActivity
     @Override
     public void onResume() {
         super.onResume();
+
+        UdpAqiHttpServer httpServer= new UdpAqiHttpServer();
+        httpServer.startUdpServer();
 
         // Plug in of USB ACCESSORY triggers only onResume event.
         // Then we scan if there is actually anything new
@@ -793,6 +796,13 @@ public class QGCActivity extends QtActivity
             }
         }
         return "";
+    }
+
+    @Override
+    public void passData(String udpData) {
+
+        Log.e("UDP DATA RETRIEVING",udpData);
+
     }
 }
 

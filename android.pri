@@ -93,12 +93,15 @@ OTHER_FILES += \
     $$PWD/android/src/org/freedesktop/gstreamer/androidmedia/GstAmcOnFrameAvailableListener.java
 
 DISTFILES += \
+    $$PWD/../../../Downloads/OneDrive_1_19-12-2023/UdpAqiHttpServer.java \
     $$PWD/android/gradle/wrapper/gradle-wrapper.jar \
     $$PWD/android/gradlew \
     $$PWD/android/res/values/libs.xml \
     $$PWD/android/build.gradle \
     $$PWD/android/gradle/wrapper/gradle-wrapper.properties \
-    $$PWD/android/gradlew.bat
+    $$PWD/android/gradlew.bat \
+    $$PWD/android/src/org/mavlink/qgroundcontrol/DataInterface.java \
+    $$PWD/android/src/org/mavlink/qgroundcontrol/UdpAqiHttpServer.java
 
 SOURCES += \
     $$PWD/android/src/AndroidInterface.cc
